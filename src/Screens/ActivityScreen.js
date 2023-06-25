@@ -72,19 +72,19 @@ const ActivityScreen = props => {
         <View>
           {segmentBar()}
           {rowListArray.length > 0 && (
-          <FlatList
-            data={rowListArray}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-          />
+            <FlatList
+              data={rowListArray}
+              renderItem={renderItem}
+              keyExtractor={item => item.id}
+            />
           )}
-           {rowListArray.length === 0 && (
-        <View style={styles.subcontainer}>
-          <Text style={inputStyles.headerStyle}>
-            {strings.activityScreen.noContent}
-          </Text>
-        </View>
-      )}
+          {rowListArray.length === 0 && (
+            <View style={styles.subcontainer}>
+              <Text style={inputStyles.headerStyle}>
+                {strings.activityScreen.noContent}
+              </Text>
+            </View>
+          )}
         </View>
       )}
       {allListArray.length === 0 && (
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:colors.black
+    backgroundColor: colors.black,
   },
   pendingActivate: {
     borderRadius: 8,
