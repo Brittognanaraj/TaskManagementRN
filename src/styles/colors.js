@@ -41,8 +41,6 @@ export default {
   lightGray: 'C3C3C3',
   contentBackgroundColor: '#E6EBEC',
   contentForegroundColor: '#A0A0A0',
-  primaryTitleFont: 'Matter-Regular',
-  primaryBoldButtonFont: 'Matter-Medium',
   tabBarBackgroundColor: '#16222C',
   searchBackgroundColor: '#FAFAFA',
   primaryLightBackgroundColor: '#83D8D3',

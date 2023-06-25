@@ -14,6 +14,7 @@ import {TaskItemComponent} from '../Components/TaskItemComponent';
 import Routes from '../Navigator/Routes';
 import DatabaseUtils from '../database/DatabaseUtils';
 import {inputStyles} from '../styles/InputStyles';
+import MenuNavBar from '../Components/MenuNavbar';
 
 let dataBase = DatabaseUtils.getInstance();
 
@@ -33,7 +34,8 @@ const AllListScreen = props => {
         translucent
         backgroundColor={colors.white}
       />
-      <Text style={inputStyles.headerStyle}>{strings.taskList.title}</Text>
+      <MenuNavBar title={strings.taskList.title} />
+
       {taskData.length > 0 && (
         <FlatList
           data={taskData}

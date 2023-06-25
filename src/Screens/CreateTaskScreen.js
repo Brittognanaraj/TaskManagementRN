@@ -20,6 +20,7 @@ import DatePicker from 'react-native-date-picker';
 import Realm from 'realm';
 import DatabaseUtils from '../database/DatabaseUtils';
 import {inputStyles} from '../styles/InputStyles';
+import MenuNavBar from '../Components/MenuNavbar';
 let realm;
 const data = getTaskLabel();
 let dataBase = DatabaseUtils.getInstance();
@@ -98,6 +99,8 @@ const CreateTaskScreen = props => {
         translucent
         backgroundColor={colors.white}
       />
+
+      <MenuNavBar title={strings.createTask.title} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         automaticallyAdjustContentInsets={false}
@@ -106,8 +109,6 @@ const CreateTaskScreen = props => {
         scrollToOverflowEnabled={true}
         nestedScrollEnabled={true}
         contentContainerStyle={{paddingBottom: 100}}>
-        <Text style={inputStyles.headerStyle}>{strings.createTask.title}</Text>
-
         <TextInput
           testID="create_task_name"
           style={styles.input}

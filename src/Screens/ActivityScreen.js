@@ -12,6 +12,9 @@ const ActivityScreen = props => {
   const [rowListArray, setRowsListArray] = useState(
     dataBase.getTaskNotStarted(),
   );
+  const [allListArray, setAllListArray] = useState(
+    dataBase.getAllTaskItemValues(),
+  );
   const [pendingPressed, setPendingPressed] = useState(true);
 
   const onPressPending = () => {
@@ -65,17 +68,26 @@ const ActivityScreen = props => {
       <Text style={inputStyles.headerStyle}>
         {strings.activityScreen.title}
       </Text>
-      {rowListArray.length > 0 && (
+      {allListArray.length > 0 && (
         <View>
           {segmentBar()}
+          {rowListArray.length > 0 && (
           <FlatList
             data={rowListArray}
             renderItem={renderItem}
             keyExtractor={item => item.id}
           />
+          )}
+           {rowListArray.length === 0 && (
+        <View style={styles.subcontainer}>
+          <Text style={inputStyles.headerStyle}>
+            {strings.activityScreen.noContent}
+          </Text>
         </View>
       )}
-      {rowListArray.length === 0 && (
+        </View>
+      )}
+      {allListArray.length === 0 && (
         <View style={styles.subcontainer}>
           <Text style={inputStyles.headerStyle}>
             {strings.activityScreen.noContent}
@@ -96,6 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:colors.black
   },
   pendingActivate: {
     borderRadius: 8,

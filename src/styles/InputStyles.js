@@ -60,12 +60,16 @@ const inputStyles = StyleSheet.create({
     marginBottom: 10,
     fontWeight: '700',
   },
+  headerStyleNav: {
+    fontSize: 22,
+    fontWeight: '700',
+  },
   segmentContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 27,
-    width:'100%'
+    width: '100%',
   },
   segmentView: {
     width: 160,
@@ -106,7 +110,6 @@ const inputStyles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: colors.declineButtonBackgroundColor,
   },
-
 });
 
 export {inputStyles};

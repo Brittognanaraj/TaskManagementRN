@@ -19,6 +19,7 @@ import CustomButton from '../Components/CustomButton';
 import DatePicker from 'react-native-date-picker';
 import DatabaseUtils from '../database/DatabaseUtils';
 import {inputStyles} from '../styles/InputStyles';
+import MenuNavBar from '../Components/MenuNavbar';
 
 const data = getTaskLabel();
 let dataBase = DatabaseUtils.getInstance();
@@ -115,6 +116,7 @@ const EditTaskScreen = props => {
         translucent
         backgroundColor={colors.white}
       />
+       <MenuNavBar title= {strings.editTaskScreen.title} />
 
       <ScrollView
         keyboardShouldPersistTaps="handled"
@@ -124,9 +126,7 @@ const EditTaskScreen = props => {
         scrollToOverflowEnabled={true}
         nestedScrollEnabled={true}
         contentContainerStyle={{paddingBottom: 100}}>
-        <Text style={inputStyles.headerStyle}>
-          {strings.editTaskScreen.title}
-        </Text>
+       
 
         <TextInput
           testID="create_task_name"
